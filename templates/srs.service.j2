@@ -1,0 +1,12 @@
+[Unit]
+Description=SRS Main Process
+
+[Service]
+WorkingDirectory={{ installation_folder }}
+ExecStart=/bin/java -jar SRS.jar
+ExecStop=/bin/pkill -15 -f SRS.jar
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

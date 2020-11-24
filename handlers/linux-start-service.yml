@@ -1,0 +1,20 @@
+
+- name: start the service
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  become: yes
+  with_items:
+    - "{{ service_name }}"
+
+- name: Pause for 5 seconds to get service up
+  pause:
+    seconds: 5
+
+- name: wait for service to start
+  health_check:
+    url: "http://localhost:{{ health_check_port | default(server_port) }}{{ health_check_uri | default('/api/SRSConfiguration') }}"
+    expected_status: "{{ health_check_status | default('200') }}"
+    max_retries: "{{ health_check_max_retries | default('20') }}"
+
