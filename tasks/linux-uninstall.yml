@@ -53,3 +53,15 @@
     state: absent
   with_items: "{{ application_versions.files }}"
   become: yes
+
+- name: remove data folder
+  file:
+    path: "{{ data_folder }}"
+    state: absent
+  become: yes
+
+- name: remove logs folder
+  file:
+    path: "{{ logs_folder }}"
+    state: absent
+  become: yes
