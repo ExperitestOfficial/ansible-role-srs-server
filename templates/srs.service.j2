@@ -7,10 +7,10 @@ StartLimitBurst=5
 
 [Service]
 Restart=on-failure
-RestartSec=5s
+RestartSec=10s
 
 WorkingDirectory={{ installation_folder }}
-ExecStart=/bin/java -jar SRS.jar
+ExecStart={{ java_bin }} -jar SRS.jar
 ExecStop=/bin/pkill -15 -f SRS.jar
 StandardOutput=syslog
 StandardError=syslog

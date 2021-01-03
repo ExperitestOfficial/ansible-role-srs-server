@@ -39,6 +39,11 @@
     lock_timeout: 180
   become: yes
 
+- name: install lxml package
+  pip:
+    name: lxml
+  become: yes
+
 # disable selinux and firewalld
 
 - name: disable selinux
