@@ -1,12 +1,11 @@
 
 - name: start the service
-  service:
-    name: "{{ item }}"
+  systemd:
     state: started
+    daemon_reload: yes
+    name: "{{ service_name }}"
     enabled: yes
   become: yes
-  with_items:
-    - "{{ service_name }}"
 
 - name: Pause for 5 seconds to get service up
   pause:

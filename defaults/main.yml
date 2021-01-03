@@ -40,9 +40,6 @@ extra_agents_xml: {}
 
 agents_xml: "{{ extra_agents_xml }}"
 
-
-
-
 start_after_install: True
 
 clear_temp_folder: False

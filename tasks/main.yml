@@ -14,7 +14,7 @@
 
 - name: clear temp folder
   include_tasks: "tasks/{{ ansible_os_family | os_family_to_os_type }}-clear-temp.yml"
-  when: clear_temp_folder | default('no') | bool
+  when: clear_temp_folder == True
 
 - name: track versions
   include_tasks: "tasks/{{ ansible_os_family | os_family_to_os_type }}-track-versions.yml"
