@@ -1,7 +1,14 @@
+# Systemd unit file for {{ app_name }} service
 [Unit]
-Description=SRS Main Process
+Description={{ app_name }} service
+
+StartLimitIntervalSec=500
+StartLimitBurst=5
 
 [Service]
+Restart=on-failure
+RestartSec=5s
+
 WorkingDirectory={{ installation_folder }}
 ExecStart=/bin/java -jar SRS.jar
 ExecStop=/bin/pkill -15 -f SRS.jar
@@ -10,3 +17,4 @@ StandardError=syslog
 
 [Install]
 WantedBy=multi-user.target
+
