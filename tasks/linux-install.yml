@@ -6,12 +6,7 @@
   with_items:
   - app_name
   - service_name
-  - installation_folder
-  - server_port
   - service_file_path
-  - installer_file_name
-  - application_properties
-  - extra_java_options
   - logs_folder
 
 # required dependencies
@@ -44,6 +39,11 @@
     lock_timeout: 180
   become: yes
 
+- name: install lxml package
+  pip:
+    name: lxml
+  become: yes
+
 # disable selinux and firewalld
 
 - name: disable selinux
@@ -67,6 +67,7 @@
   file:
     path: "{{ temp_folder }}"
     state: directory
+    mode: 0777
     owner: "{{ ansible_user_id }}"
   become: yes
 
@@ -130,6 +131,7 @@
   file: 
     path: "{{ installation_folder }}"
     state: absent
+  become: yes
   when: clear_before_install == True
 
 # unpack and copy all the files to the installation folder

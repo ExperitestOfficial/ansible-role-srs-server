@@ -3,10 +3,11 @@
 required_modifiable_fields:
   - app_version
   - server_port
-  - installation_folder
+  - installation_root_folder
+  - java_version
 
 app_name: "srs"
-__app_version: 20.11.130
+__app_version: 21.1.166
 
 service_name: "{{ app_name }}.service"
 
@@ -38,9 +39,6 @@ agents_xml_xpath:
 extra_agents_xml: {}
 
 agents_xml: "{{ extra_agents_xml }}"
-
-
-
 
 start_after_install: True
 

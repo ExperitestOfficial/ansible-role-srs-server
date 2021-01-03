@@ -13,8 +13,9 @@ class FilterModule(object):
             "redhat": "linux",
             "debian": "linux",
             "suse": "linux",
+            "centos": "linux",
             "darwin": "darwin",
             "windows": "windows"
-        })                   
+        })        
 
         return os_family_to_os_type_dict[os_family.lower()]

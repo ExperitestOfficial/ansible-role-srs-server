@@ -46,6 +46,7 @@
     pattern: "{{ app_name }}-*"
     file_type: directory
   register: application_versions
+  become: yes
 
 - name: remove application versions
   file:
