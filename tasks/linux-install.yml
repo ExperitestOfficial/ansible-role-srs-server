@@ -42,6 +42,7 @@
 - name: install lxml package
   pip:
     name: lxml
+  delegate_to: localhost
   become: yes
 
 # disable selinux and firewalld
