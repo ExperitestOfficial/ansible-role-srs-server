@@ -13,7 +13,7 @@ service_name: "{{ app_name }}.service"
 
 __server_port: 8090
 
-__java_version: 1.8.0_221
+__java_version: 1.8.0_281
 
 
 # application.properties
