@@ -43,7 +43,7 @@
   pip:
     name: lxml
   delegate_to: localhost
-  become: yes
+#  become: yes
 
 # disable selinux and firewalld
 
