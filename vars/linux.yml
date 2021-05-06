@@ -17,11 +17,11 @@ installer_file_name: "SRS_{{ app_version }}.zip"
 
 relative_path: "srs/linux"
 
-java_download_filename: "jre{{ java_version }}-linux-x64.tar.gz"
+java_download_filename: "OpenJDK8U-jre_x64_linux_hotspot_{{ java_version }}.tar.gz"
 
 java_relative_path: "java/linux"
 
 java_installation_folder: "{{ installation_root_folder }}/jre"
 
-java_bin: "{{ java_installation_folder }}/jre{{ java_version }}/bin/java"
+java_bin: "{{ java_installation_folder }}/jdk{{ java_version }}-jre/bin/java"
 
